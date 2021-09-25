@@ -1,0 +1,224 @@
+@font-face {
+  font-family: "Computer Modern";
+  src: url("./cmunss.otf");
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url("./cmunsx.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url("./cmunsi.otf");
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url("./cmunbxo.otf");
+  font-weight: bold;
+  font-style: italic, oblique;
+}
+
+html {
+  max-width: 70ch;
+  padding: 2ch;
+  margin: auto;
+  color: #333;
+  font-size: 1.2em;
+}
+
+
+html::before {
+  content: "\\documentclass[]{article}";
+}
+
+title::before {
+  content: "\\title{"
+}
+
+title,head,html {
+  display: block;
+}
+
+body::before {
+  content: "\\begin{document}\A\\maketitle";
+  white-space: pre-wrap;
+}
+body::after {
+  content: "\A\\end{document}";
+  white-space: pre-wrap;
+}
+
+h1::before {
+  content: "\\section{";
+}
+
+h2::before {
+  content: "\\subsection{";
+}
+
+h3::before {
+  content: "\\subsubsection{";
+}
+
+h4::before {
+  content: "\\paragraph{";
+}
+
+h5::before {
+  content: "\\subparagraph{";
+}
+
+a[href]::before {
+  content: "\\href{"attr(href) "}{";
+}
+
+/* *[id]::before {
+  content: "\\hypertarget{"attr(id) "}{}";
+} */
+
+ul::before {
+  content: "\\begin{itemize}";
+}
+ul::after {
+  content: "\\end{itemize}";
+}
+ol::before {
+  content: "\\begin{enumerate}";
+}
+ol::after {
+  content: "\\end{enumerate}";
+}
+li::before {
+  content: "\\item ";
+}
+li {
+  list-style: none;
+  margin: unset;
+}
+
+blockquote::before {
+  content: "\\begin{quote}\A";
+  white-space: pre-wrap;
+}
+blockquote::after {
+  content: "\A\\end{quote}";
+  white-space: pre-wrap;
+}
+
+dl::before {
+  content: "\\begin{description}";
+}
+dl::after {
+  content: "\\end{description}";
+}
+
+dt::before {
+  content: "\\item[";
+}
+dt::after {
+  content: "]";
+}
+
+hr::before {
+  content: "\\begin{center}\\rule{0.5\\linewidth}{0.5pt}\\end{center}";
+}
+hr {
+  border: unset;
+  border-bottom: inset;
+  border-width: 1px;
+}
+
+strong::before,
+b::before {
+  content: "\\textbf{";
+}
+
+em::before {
+  content: "\\emph{";
+}
+
+i::before {
+  content: "\\emph{";
+}
+
+u::before,
+ins::before {
+  content: "\\uline{";
+}
+
+s::before,
+del::before {
+  content: "\\sout{";
+}
+
+sup::before {
+  content: "\\textsuperscript{";
+}
+
+sub::before {
+  content: "\\textsubscript{";
+}
+
+q::before {
+  content: "``";
+}
+q::after {
+  content: "''";
+}
+
+code::before,
+var::before {
+  content: "//texttt{";
+}
+
+
+mark::before,
+dfn::before {
+  content: "{";
+}
+
+title::after,
+img::after,
+code::after,
+var::after,
+mark::after,
+dfn::after,
+sub::after,
+sup::after,
+s::after,
+ins::after,
+del::after,
+a::after,
+h1::after,
+h2::after,
+h3::after,
+h4::after,
+h5::after,
+strong::after,
+b::after,
+em::after,
+i::after,
+u::after {
+  content: "}";
+}
+
+*::before,
+*::after {
+  color: rgba(18, 136, 38, 0.5);
+  font-weight: 100;
+  font-size: 1em;
+}
+* {
+  font-family: "Computer Modern" serif;
+  margin: 1.5em 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+code,
+pre {
+  font-family: monospace;
+}
