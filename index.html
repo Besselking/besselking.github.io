@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <title>This html page is styled like a latex source file.</title>
+    <link rel="stylesheet" href="meta-latex.css" />
+</head>
+
+<body>
+    <h1>This html page is styled like a latex source file.</h1>
+    <p>This “project” is inspired by <a href="https://secretgeek.github.io/html_wysiwyg/html.html">html wysiwyg</a>. 
+    All latex commands are added with psuedo elements (::before, :after) and do not exist in the html source file. Mixed with a little bit of normal styling to make it a bit more pleasant to look at.
+    </p>
+    <h2>Elements that kinda work</h2>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <ul>
+        <li>Unordered lists</li>
+        <li>item2</li>
+    </ul>
+
+    <ol>
+        <li>Ordered lists</li>
+        <li>Loses its numbering</li>
+    </ol>
+
+    <p>
+        <b>bold text</b> normal text <strong>strong text</strong> <em>emphasized text</em> <i>italized text</i>
+        <u>underscore</u> <s>strikethrough</s>
+    </p>
+    <p>Psuedo elements's text-decoration can't be turned off, strangely bold and strong aren't affected by its own style.</p>
+
+    <blockquote>
+        Block quotes
+    </blockquote>
+
+    <p>
+        Horizontal rules, based on pandocs translation.
+        <hr>
+    </p>
+
+    inline <q>quotes</q>
+    <p>
+        <mark>Marked text</mark> <dfn>definition</dfn> are both based on the pandoc translation, doesn't seem to do
+        anything in latex though
+    </p>
+
+    <p>Sub<sub>script</sub> H<sub>2</sub>O</p>
+    <p>
+        Super<sup>script</sup>
+    </p>
+
+    <h2>Elements that dont work</h2>
+    <ul>
+        <li>replacement elements like img, or br</li>
+        <li>tables, a tables header is rendered before the table::before, which makes it impossible (too annoying) to
+            translate it to latex with psuedo classes. Also tables in Latex are super ugly and unreadable in the source
+            file</li>
+        <li>h6, there is no subsubparagraph in the default article class</li>
+        <li>Probably a lot more doesn't quite work right</li>
+    </ul>
+
+</body>
+
+</html>
